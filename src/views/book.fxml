@@ -15,7 +15,7 @@
    <center>
       <AnchorPane minHeight="400.0" minWidth="600.0" stylesheets="@../values/style.css" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" layoutY="400.0" prefHeight="25.0" prefWidth="780.0" spacing="10.0">
+            <HBox alignment="CENTER" layoutY="400.0" prefHeight="25.0" prefWidth="780.0" spacing="15.0">
                <children>
                   <TextField fx:id="tfName" focusTraversable="false" minHeight="20.0" prefWidth="150.0" promptText="Название" stylesheets="@../values/style.css">
                      <styleClass>
@@ -35,21 +35,7 @@
                         <Insets />
                      </opaqueInsets>
                   </TextField>
-                  <DatePicker fx:id="tfDatePublish" minHeight="20.0" prefWidth="150.0" promptText="Дата издания" styleClass="shadow" stylesheets="@../values/style.css" />
-                  <Button fx:id="btnInsert" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="80.0" stylesheets="@../values/style.css" text="Добавить">
-                     <styleClass>
-                        <String fx:value="search-box" />
-                        <String fx:value="shadow" />
-                        <String fx:value="button" />
-                     </styleClass>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" layoutY="440.0" prefHeight="25.0" prefWidth="780.0" spacing="10.0">
-               <children>
-                  <DatePicker fx:id="dpDateIssue" minHeight="20.0" prefWidth="150.0" promptText="Дата выдачи" styleClass="shadow" stylesheets="@../values/style.css" />
-                  <DatePicker fx:id="dpDateReceiving" minHeight="20.0" prefWidth="150.0" promptText="Дата получения" styleClass="shadow" stylesheets="@../values/style.css" />
-                  <TextField fx:id="tfNumberCopies" focusTraversable="false" promptText="Количество экземпляров" stylesheets="@../values/style.css">
+                  <TextField fx:id="tfNumberCopies" focusTraversable="false" minHeight="20.0" prefWidth="160.0" promptText="Количество экземпляров" stylesheets="@../values/style.css">
                      <styleClass>
                         <String fx:value="search-box" />
                         <String fx:value="shadow" />
@@ -58,11 +44,31 @@
                         <Insets />
                      </opaqueInsets>
                   </TextField>
+                  <Button fx:id="btnInsert" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="80.0" stylesheets="@../values/style.css" text="Добавить">
+                     <styleClass>
+                        <String fx:value="search-box" />
+                        <String fx:value="shadow" />
+                        <String fx:value="button" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets left="155.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutY="440.0" prefHeight="25.0" prefWidth="780.0" spacing="15.0">
+               <children>
+                  <DatePicker fx:id="dpDateIssue" minHeight="20.0" prefWidth="150.0" promptText="Дата выдачи" styleClass="shadow" stylesheets="@../values/style.css" />
+                  <DatePicker fx:id="dpDateReceiving" minHeight="20.0" prefWidth="150.0" promptText="Дата получения" styleClass="shadow" stylesheets="@../values/style.css" />
+                  <DatePicker fx:id="tfDatePublish" minHeight="20.0" prefWidth="160.0" promptText="Дата издания" styleClass="shadow" stylesheets="@../values/style.css" />
                   <Button fx:id="btnDelete" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="80.0" stylesheets="@../values/style.css" text="Удалить">
                      <styleClass>
                         <String fx:value="search-box" />
                         <String fx:value="shadow" />
                      </styleClass>
+                     <HBox.margin>
+                        <Insets left="155.0" />
+                     </HBox.margin>
                   </Button>
                </children>
             </HBox>
