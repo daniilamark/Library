@@ -4,20 +4,16 @@ import java.sql.*;
 
 public class DBHandler extends ConfigsDb{
     Connection dbConnection;
-    public int id;
+
+    // соединение с бд
 
     public Connection getDBConnection() throws ClassNotFoundException, SQLException {
         String connectionString = "jdbc:mysql://" + dbHost + ":" + dbPort + "/" + dbName;
-
-        // System.out.println(Class.forName("com.mysql.jdbc.Driver"));
-
         dbConnection = DriverManager.getConnection(connectionString, dbUser, dbPass);
-
         return dbConnection;
     }
 
-
-
+    // выполнение запроса
     public void executeQuery(String query) {
         Connection conn = null;
         try {

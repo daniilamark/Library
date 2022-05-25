@@ -3,7 +3,7 @@ package model;
 public class Book {
 
     private int book_id;
-    private String name;
+    private String book_name;
     private String author;
     private String date_publish;
     private String date_issue;
@@ -12,7 +12,7 @@ public class Book {
 
     public Book(int book_id, String name, String author, String date_publish, String date_issue, String date_receiving, int number_copies) {
         this.book_id = book_id;
-        this.name = name;
+        this.book_name = name;
         this.author = author;
         this.date_publish = date_publish;
         this.date_issue = date_issue;
@@ -24,8 +24,8 @@ public class Book {
         return book_id;
     }
 
-    public String getName() {
-        return name;
+    public String getBook_name() {
+        return book_name;
     }
 
     public String getAuthor() {

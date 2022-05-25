@@ -72,9 +72,7 @@ public class HallController implements Initializable {
         Connection conn = null;
         try {
             conn = dbHandler.getDBConnection();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
         String query = "SELECT * FROM hall";
@@ -82,6 +80,7 @@ public class HallController implements Initializable {
         Statement st;
         ResultSet rs;
         try {
+            assert conn != null;
             st = conn.createStatement();
             rs = st.executeQuery(query);
             Hall hall;
@@ -101,11 +100,11 @@ public class HallController implements Initializable {
     public void showHalls() {
         ObservableList<Hall> list = getHallList();
 
-        colNum.setCellValueFactory(new PropertyValueFactory<Hall, Integer>("hall_id"));
-        colLibraryName.setCellValueFactory(new PropertyValueFactory<Hall, String>("library_name"));
-        colHall.setCellValueFactory(new PropertyValueFactory<Hall, String>("hall_name"));
-        colSpecialization.setCellValueFactory(new PropertyValueFactory<Hall, String>("specialization"));
-        colNumberSeats.setCellValueFactory(new PropertyValueFactory<Hall, Integer>("number_seats"));
+        colNum.setCellValueFactory(new PropertyValueFactory<>("hall_id"));
+        colLibraryName.setCellValueFactory(new PropertyValueFactory<>("library_name"));
+        colHall.setCellValueFactory(new PropertyValueFactory<>("hall_name"));
+        colSpecialization.setCellValueFactory(new PropertyValueFactory<>("specialization"));
+        colNumberSeats.setCellValueFactory(new PropertyValueFactory<>("number_seats"));
 
         tvHall.setItems(list);
     }
